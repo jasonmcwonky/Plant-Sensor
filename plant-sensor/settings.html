@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Settings | PlantSense</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌱 PlantSense
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="sandraisgay(main web).html" class="nav-item">
+                🏠 Dashboard
+            </a>
+
+            <a href="settings.html" class="nav-item active">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <h2>Settings</h2>
+        </header>
+
+
+        <section class="page">
+
+            <div class="hero">
+
+                <h1>System Settings</h1>
+
+                <p>
+                    Configure how PlantSense monitors and waters your plant.
+                </p>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+
+                <!-- MOISTURE THRESHOLD -->
+                <div class="card setting-card">
+
+                    <h3>🌱 Moisture Threshold</h3>
+
+                    <p>
+                        Automatically water when soil moisture falls below:
+                    </p>
+
+                    <div class="setting-options">
+
+                        <button
+                            class="setting-option moisture-option"
+                            data-value="30"
+                        >
+                            Under 30%
+                        </button>
+
+                        <button
+                            class="setting-option moisture-option"
+                            data-value="40"
+                        >
+                            Under 40%
+                        </button>
+
+                        <button
+                            class="setting-option moisture-option"
+                            data-value="50"
+                        >
+                            Under 50%
+                        </button>
+
+                    </div>
+
+                    <p class="setting-current">
+                        Current threshold:
+                        <strong id="thresholdDisplay">30%</strong>
+                    </p>
+
+                </div>
+
+
+                <!-- WATER AMOUNT -->
+                <div class="card setting-card">
+
+                    <h3>💧 Amount of Water Pumped</h3>
+
+                    <p>
+                        Choose how much water is pumped during each cycle.
+                    </p>
+
+                    <div class="setting-options">
+
+                        <button
+                            class="setting-option water-option"
+                            data-value="5"
+                        >
+                            5%
+                        </button>
+
+                        <button
+                            class="setting-option water-option"
+                            data-value="10"
+                        >
+                            10%
+                        </button>
+
+                        <button
+                            class="setting-option water-option"
+                            data-value="15"
+                        >
+                            15%
+                        </button>
+
+                        <button
+                            class="setting-option water-option"
+                            data-value="20"
+                        >
+                            20%
+                        </button>
+
+                    </div>
+
+                    <p class="setting-current">
+                        Current amount:
+                        <strong id="waterAmountDisplay">10%</strong>
+                    </p>
+
+                </div>
+
+
+                <!-- SYSTEM MODE -->
+                <div class="card setting-card">
+
+                    <h3>🤖 System Mode</h3>
+
+                    <p>
+                        Choose whether PlantSense controls watering automatically
+                        or waits for you to activate it manually.
+                    </p>
+
+                    <div class="mode-toggle">
+
+                        <button
+                            id="automaticModeButton"
+                            class="mode-option active"
+                        >
+                            🤖 Automatic
+                        </button>
+
+                        <button
+                            id="manualModeButton"
+                            class="mode-option"
+                        >
+                            🖐️ Manual
+                        </button>
+
+                    </div>
+
+                    <p class="setting-current">
+                        Current mode:
+                        <strong id="systemModeDisplay">
+                            Automatic
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <div class="card setting-card">
+    <h3>🔌 Hardware Connection</h3>
+
+    <p>
+        Arduino status:
+        <strong id="arduinoStatus">
+            Disconnected
+        </strong>
+    </p>
+
+    <p id="serialMessage">
+        Connect your Arduino to receive real soil-moisture readings.
+    </p>
+
+    <button
+        id="connectArduinoButton"
+        class="primary-button"
+        type="button"
+    >
+        🔌 Connect Arduino
+    </button>
+</div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

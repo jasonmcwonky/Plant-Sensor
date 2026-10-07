@@ -1,0 +1,623 @@
+/* =========================================
+   PLANTSENSE - DARK MODE
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0b0f0e;
+    color: #e8f0ed;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 250px;
+    height: 100vh;
+
+    background: #111716;
+    border-right: 1px solid #26312e;
+
+    padding: 28px 18px;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    padding: 0 14px;
+    margin-bottom: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 48px;
+
+    padding: 12px 15px;
+
+    border-radius: 10px;
+
+    color: #9aa9a4;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-item:hover {
+    background: #1b2422;
+    color: #ffffff;
+}
+
+.nav-item.active {
+    background: #203b32;
+    color: #72d6a6;
+}
+
+
+/* =========================================
+   MAIN CONTENT
+   ========================================= */
+
+.main-content {
+    margin-left: 250px;
+
+    min-height: 100vh;
+
+    padding: 0 35px 50px;
+}
+
+
+/* =========================================
+   TOP BAR
+   ========================================= */
+
+.topbar {
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+
+    border-bottom: 1px solid #202a27;
+
+    margin-bottom: 30px;
+}
+
+.topbar h2 {
+    font-size: 22px;
+    font-weight: 600;
+
+    color: #f4f8f6;
+}
+
+
+/* =========================================
+   PAGE
+   ========================================= */
+
+.page {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    background: linear-gradient(
+        135deg,
+        #16241f,
+        #101715
+    );
+
+    border: 1px solid #263630;
+
+    border-radius: 18px;
+
+    padding: 32px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 {
+    font-size: 30px;
+    margin-bottom: 8px;
+
+    color: #ffffff;
+}
+
+.hero p {
+    color: #93a39e;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CARDS
+   ========================================= */
+
+.cards {
+    display: grid;
+
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+    );
+
+    gap: 20px;
+}
+
+.card {
+    background: #121918;
+
+    border: 1px solid #26312e;
+
+    border-radius: 16px;
+
+    padding: 25px;
+
+    min-width: 0;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+
+    background: #151e1c;
+
+    border-color: #34453f;
+}
+
+.card h3 {
+    font-size: 15px;
+
+    color: #9baaa5;
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aebbb7;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   LARGE NUMBERS
+   ========================================= */
+
+.big-number {
+    font-size: 38px;
+
+    font-weight: 700;
+
+    color: #72d6a6;
+
+    margin-top: 8px;
+}
+
+
+/* =========================================
+   MOISTURE BAR
+   ========================================= */
+
+.progress-container {
+    width: 100%;
+
+    height: 10px;
+
+    background: #27322f;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 100%;
+
+    width: 68%;
+
+    background: #72d6a6;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* =========================================
+   STATUS
+   ========================================= */
+
+.status {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    margin-top: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status.healthy {
+    background: #183329;
+    color: #72d6a6;
+}
+
+.status.dry {
+    background: #392c18;
+    color: #e9b85b;
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button,
+.primary-button {
+    border: none;
+
+    background: #72d6a6;
+
+    color: #0b0f0e;
+
+    padding: 12px 18px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover,
+.primary-button:hover {
+    background: #8ae1b7;
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 18px rgba(114, 214, 166, 0.15);
+}
+
+button:active,
+.primary-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   HISTORY
+   ========================================= */
+
+#history {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+#history p {
+    background: #1a2321;
+
+    padding: 10px 12px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    color: #aebbb7;
+}
+
+
+/* =========================================
+   INPUTS / SETTINGS
+   ========================================= */
+
+input,
+select {
+    width: 100%;
+
+    background: #0d1211;
+
+    color: #e8f0ed;
+
+    border: 1px solid #303c38;
+
+    border-radius: 8px;
+
+    padding: 11px 12px;
+
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #72d6a6;
+}
+
+
+/* =========================================
+   SCROLLBAR
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0f0e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #293530;
+
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3a4943;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .sidebar {
+        position: relative;
+
+        width: 100%;
+        height: auto;
+
+        border-right: none;
+        border-bottom: 1px solid #26312e;
+
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-menu {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .main-content {
+        margin-left: 0;
+
+        padding: 0 15px 30px;
+    }
+
+    .topbar {
+        height: 65px;
+    }
+
+    .hero {
+        padding: 22px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .nav-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 18px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+}
+/* =========================================
+   SETTINGS
+   ========================================= */
+
+.settings-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.setting-card {
+    min-height: 250px;
+}
+
+.setting-card h3 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.setting-card > p {
+    margin-bottom: 18px;
+}
+
+
+.setting-options {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.setting-option,
+.mode-option {
+    background: #1a2321;
+
+    color: #9eada8;
+
+    border: 1px solid #303c38;
+
+    padding: 12px 10px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.2s ease;
+}
+
+.setting-option:hover,
+.mode-option:hover {
+    background: #222d2a;
+    color: #ffffff;
+}
+
+
+.setting-option.selected {
+    background: #203b32;
+
+    color: #72d6a6;
+
+    border-color: #72d6a6;
+}
+
+
+.setting-current {
+    color: #7f8e89;
+    font-size: 14px;
+}
+
+.setting-current strong {
+    color: #72d6a6;
+}
+
+
+.mode-toggle {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-bottom: 18px;
+}
+
+
+.mode-option.active {
+    background: #203b32;
+
+    color: #72d6a6;
+
+    border-color: #72d6a6;
+}
+
+
+@media (max-width: 800px) {
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .setting-options {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}

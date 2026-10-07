@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | PlantSense</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            🌱 PlantSense
+        </div>
+
+        <nav class="nav-menu">
+
+            <a href="sandraisgay(main web).html" class="nav-item active">
+                🏠 Dashboard
+            </a>
+
+            <a href="settings.html" class="nav-item">
+                ⚙️ Settings
+            </a>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <h2>Dashboard</h2>
+        </header>
+
+
+        <section class="page">
+
+            <!-- PLANT STATUS -->
+            <div class="hero">
+
+                <h1>Plant Overview</h1>
+
+                <p>
+                    Monitor your plant's soil and watering system.
+                </p>
+
+                <div
+                    id="plantStatus"
+                    class="status healthy"
+                >
+                    🟢 Healthy
+                </div>
+
+                <p id="lastUpdated">
+                    Last updated: --
+                </p>
+
+            </div>
+
+
+            <!-- SENSOR CARDS -->
+            <div class="cards">
+
+
+                <!-- SOIL MOISTURE -->
+                <div class="card">
+
+                    <h3>🌱 Soil Moisture</h3>
+
+                    <div
+                        class="big-number"
+                        id="moistureValue"
+                    >
+                        68%
+                    </div>
+
+                    <div class="progress-container">
+
+                        <div
+                            class="progress-bar"
+                            id="moistureBar"
+                        ></div>
+
+                    </div>
+
+                    <p>
+                        Current soil moisture level
+                    </p>
+
+                </div>
+
+
+                <!-- WATER PUMP -->
+                <div class="card">
+
+                    <h3>💧 Water Pump</h3>
+
+                    <div
+                        class="big-number"
+                        id="pumpStatus"
+                    >
+                        OFF
+                    </div>
+
+                    <p>
+                        Current pump status
+                    </p>
+
+                </div>
+
+
+                <!-- MOISTURE THRESHOLD -->
+                <div class="card">
+
+                    <h3>🎯 Watering Threshold</h3>
+
+                    <div
+                        class="big-number"
+                        id="dashboardThreshold"
+                    >
+                        30%
+                    </div>
+
+                    <p>
+                        Automatic watering starts below this level.
+                    </p>
+
+                </div>
+
+
+                <!-- WATER AMOUNT -->
+                <div class="card">
+
+                    <h3>💧 Water Amount</h3>
+
+                    <div
+                        class="big-number"
+                        id="dashboardWaterAmount"
+                    >
+                        10%
+                    </div>
+
+                    <p>
+                        Amount selected for each watering cycle.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK WATERING -->
+            <div
+                class="hero"
+                style="margin-top: 25px;"
+            >
+
+                <h2>Quick Watering</h2>
+
+                <p>
+                    Manually activate the pump.
+                </p>
+
+                <br>
+
+                <button
+    id="connectArduinoButton"
+    class="primary-button"
+    type="button"
+>
+    🔌 Connect Arduino
+</button>
+
+<br><br>
+
+<button
+    class="primary-button"
+    onclick="waterPlant()"
+>
+    💧 Water Plant
+</button>
+
+            </div>
+
+
+            <!-- RECENT HISTORY -->
+            <div
+                class="card"
+                style="margin-top: 25px;"
+            >
+
+                <h3>Recent Watering</h3>
+
+                <div id="history">
+
+                    <p>
+                        No watering events yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
